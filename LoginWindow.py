@@ -72,10 +72,10 @@ class LoginWindow:
         else: 
             print("Failed")
 
-
+    # Log in to the library
     def goToBlankScreen(self):
             newpage = tk.Toplevel()
-            newpage.title("Welcome")
+            newpage.title("Library")
             newpage.geometry("200x200")
             newpage.mainloop()  
  
