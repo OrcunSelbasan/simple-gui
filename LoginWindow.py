@@ -1,7 +1,9 @@
 """
     Stage: Development-01
-    @author:
-    @author:
+    @author: Omar Al-Shareef , 119200019
+    @author: Lütfü Orçun Selbasan , 119200063
+    @author: Murat Can Önder , 119200089
+
 """
 
 import tkinter as tk
@@ -60,17 +62,23 @@ class LoginWindow:
         :param event: action event for detecting which button is clicked
     """
     def handleLogin(self, event):
-        username = "JohnDoe"
+        username = "janedoe"
         password = "12345"
         conditionName = self.usernameInput.get() == username
         conditionPassword = self.passwordInput.get() == password
         if (conditionName and conditionPassword):
             print("SUCESS")
+            self.goToBlankScreen()
         else: 
             print("Failed")
 
 
-
+    def goToBlankScreen(self):
+            newpage = tk.Toplevel()
+            newpage.title("Welcome")
+            newpage.geometry("200x200")
+            newpage.mainloop()  
+ 
 
     def handleExit(self, event):
         self.window.destroy()
@@ -80,5 +88,7 @@ class LoginWindow:
 if __name__ == "__main__":
     LoginWindow()
 
+# Create login window
 lw = LoginWindow();
+# Start login window
 lw
