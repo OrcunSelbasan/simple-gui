@@ -4,6 +4,9 @@
     @author: Lütfü Orçun Selbasan , 119200063
     @author: Murat Can Önder , 119200089
 
+    Stage: Development-02
+    @author: Yiğit Cem Hoşoğlu, 120202046
+    @author: Volkan Kıvrak, 120202101
 """
 
 import tkinter as tk
@@ -23,7 +26,6 @@ class LoginWindow:
     """
         Initialize GUI elements. If it is necessary, you can add
         more elements.
-
         ! PLEASE RENAME THE OBJECTS ACCORDING TO THEIR PURPOSES !
         ! YOU CAN ADD MORE ELEMENTS IF IT IS NECESSARY !
     """
@@ -33,7 +35,7 @@ class LoginWindow:
 
         self.usernameInput = tk.Entry()
         self.passwordInput = tk.Entry(show="*")
- 
+
         self.exitBtn = tk.Button(text="Exit")
         self.loginBtn = tk.Button(text="Login")
 
@@ -55,12 +57,7 @@ class LoginWindow:
         self.loginBtn.grid(row=2, column=1, padx=10, pady=5)
         self.exitBtn.grid(row=2, column=0, padx=10, pady=5)
 
-    """
-        Action listener for the buttons. If "event.widget" is from
-        one of the buttons, apply the related operation.
 
-        :param event: action event for detecting which button is clicked
-    """
     def handleLogin(self, event):
         username = "janedoe"
         password = "12345"
@@ -68,27 +65,39 @@ class LoginWindow:
         conditionPassword = self.passwordInput.get() == password
         if (conditionName and conditionPassword):
             print("SUCESS")
-            self.goToBlankScreen()
-        else: 
+
+            newnewPage()
+        else:
             print("Failed")
 
-    # Log in to the library
-    def goToBlankScreen(self):
-            newpage = tk.Toplevel()
-            newpage.title("Library")
-            newpage.geometry("200x200")
-            newpage.mainloop()  
- 
 
     def handleExit(self, event):
         self.window.destroy()
 
+
+class newnewPage:
+    # constructor
+    def __init__(self):
+        self.window = tk.Tk()  # root window, if you wanna destroy the frame, use this variable
+        self.window.title("N")
+
+        self._iGUI()
+
+        # start the GUI frame
+        self.window.mainloop()
+
+    def _iGUI(self):
+        btn1 = tk.Button(text="Add Book Details", bg='black', fg='white')
+        btn1.place(relx=0.28, rely=0.4, relwidth=0.45, relheight=0.1)
+
+        btn2 = tk.Button(text="Delete Book", bg='black', fg='white')
+        btn2.place(relx=0.28, rely=0.5, relwidth=0.45, relheight=0.1)
 
 # main method for testing the application
 if __name__ == "__main__":
     LoginWindow()
 
 # Create login window
-lw = LoginWindow();
+lw = LoginWindow()
 # Start login window
-lw
+
