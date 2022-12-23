@@ -4,6 +4,10 @@
     @author: Lütfü Orçun Selbasan , 119200063
     @author: Murat Can Önder , 119200089
 
+    Stage: Code review
+    @author: Abdel Rahman Abdin Mousa Abdin, 120200128
+    @author: abdulrahman aorfahli, 119200028
+    @author: Resul Erdem Arduç, 119200056
 """
 
 import tkinter as tk
@@ -74,7 +78,7 @@ class LoginWindow:
 
     # Log in to the library
     def goToBlankScreen(self):
-            newpage = tk.Toplevel()
+            newpage = tk.Toplevel()    
             newpage.title("Library")
             newpage.geometry("200x200")
             newpage.mainloop()  
